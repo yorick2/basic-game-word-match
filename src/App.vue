@@ -159,24 +159,27 @@ export default {
     const axios = require('axios');
     let url = 'https://random-words-api.vercel.app/word';
     for (let i=0; i<7; i++) {
-      axios.get(url)
-        .then(response => {
-          let data = response.data[0];
-          this.WordArray.push({
-            id: i,
-            value: data.word,
-            disabled: false
-          });
-          this.DefinitionArray.push({
-            id: i,
-            value: data.definition,
-            disabled: false
-          });
-          this.shuffleArray(this.DefinitionArray);
-        })
-        .catch(error => {
-          this.errorArray.push(error);
-        })
+      setTimeout(
+        axios.get(url)
+          .then(response => {
+            let data = response.data[0];
+            this.WordArray.push({
+              id: i,
+              value: data.word,
+              disabled: false
+            });
+            this.DefinitionArray.push({
+              id: i,
+              value: data.definition,
+              disabled: false
+            });
+            this.shuffleArray(this.DefinitionArray);
+          })
+          .catch(error => {
+            this.errorArray.push(error);
+          })
+        ,100
+      );
     }
     this.DefinitionArray = this.DefinitionArray.sort(() => Math.random() - 0.5)
   }

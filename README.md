@@ -1,5 +1,9 @@
 # match-word
+Match the words on the left to their definition on the right. Click a single word, select a guess of the
+definition on the right and select submit to try you guess. Incorrect selections loose a life.
 
+Good luck and happy playing.
+ 
 ## Project setup
 ```
 npm install
