@@ -20,5 +20,10 @@ npm run build
 npm run lint
 ```
 
+### Run tailwind compiler
+```
+npx tailwindcss -i ./src/input.css -o ./public/output.css --watch
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
